@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-<Header title="Hilfe Bedarf"/>
+<Header title="Hilfsbedarf"/>
 <HelpReq :helps="helps"/>
 </div>
 </template>
