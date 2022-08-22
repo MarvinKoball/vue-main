@@ -1,6 +1,6 @@
 <template>
     <div :key= "help.requestTimestamp" v-for="help in helps">
-    <Req :help="help"
+    <HelpReq :help="help"
     />
     </div>
 </template>
@@ -10,13 +10,13 @@ import HelpReq from './HelpReq'
 
 
 export default {
-  name: 'HelpReq',
+  name: 'HelpReqList',
   props: {
     helps: Array,
     },
 
 components:{
-  Req
+  HelpReq
 },
 
 }
