@@ -1,13 +1,16 @@
 <template>
 <div class="container">
 <Header title="Hilfsbedarf"/>
-<HelpReq :helps="helps"/>
+<HelpReqList :helps="pollResponse"/>
+
 </div>
+<div>lels</div>
 </template>
 
 <script>
+import vue, { computed } from 'vue'
 import Header from './components/Header'
-import HelpReq from './components/HelpReq'
+import HelpReqList from './components/HelpReqList'
 
 export default {
   name: 'App',
@@ -17,21 +20,27 @@ export default {
   },
   data() {
     return{
-      helps:[]
+      pollResponse: { data: [] }
       }
   },
-  methods:{
-async fetchTasks(){
-  const res = await fetch('http://localhost:3000/help')
 
-  const data = await res.json()
-  return data
-}},
+  methods: {
+     async withPolling() {
+      const endpoint = 'http://localhost:3000/help'
+      setInterval(async () => {
+        const response = await fetch(endpoint)
+        const json = await response.json()
+        this.pollResponse = json
+      }, 5000)
+  }
+  },
 
-  async created(){
-    this.helps=await this.fetchTasks()
-  } 
+  created(){
+    console.log("intial ", this.pollResponse)
+    this.withPolling()
+  }
 }
+
 </script>
 
 <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
