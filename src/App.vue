@@ -4,7 +4,7 @@
 <HelpReqList :helps="pollResponse"/>
 
 </div>
-<div>lels</div>
+
 </template>
 
 <script>
