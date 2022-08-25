@@ -1,8 +1,10 @@
 <template>
    <div class="help">
-   
-   <h3>{{help.ccoPrefix}}</h3>
+
+   <h3>{{help.posName}}</h3>
+   <p>ID: {{help.ccoPrefix}}</p>
    <p>{{help.requestTimestamp}}</p>
+   
 
    </div>
 </template>
