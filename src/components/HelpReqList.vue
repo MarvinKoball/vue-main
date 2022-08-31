@@ -1,7 +1,9 @@
 <template>
+    <div class="reverseorder">
     <div :key= "help.requestTimestamp" v-for="help in helps">
     <HelpReq :help="help"
     />
+    </div>
     </div>
 </template>
 
@@ -21,3 +23,9 @@ components:{
 
 }
 </script>
+<style>
+.reverseorder {
+  display: flex;
+  flex-direction: column-reverse;
+}
+</style>

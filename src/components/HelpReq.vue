@@ -10,12 +10,16 @@
 </template>
 
 <script>
+
 export default {
   name: 'HelpReq',
   props: {
     help: Object,
-  },
-}
+  }
+
+  }
+  
+
 </script>
 
 <style scope>

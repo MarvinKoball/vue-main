@@ -40,8 +40,12 @@ fastify.post('/help', async (request, reply)=>{
 
 fastify.get('/help', (request, reply)=>{
   reply.send(helpClient)
-}
-)})
+}),
+fastify.post('/clear',(request,reply)=>{
+  helpClient=[]
+  reply.send()
+})
+})
 
 
 // dritter computer kann abfragen ob jemand hilfe braucht

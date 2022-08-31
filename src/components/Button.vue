@@ -14,6 +14,11 @@ export default{
     methods:{
         onClick(){
             console.log('click')
+            fetch('http://localhost:3000/clear', {
+            method: 'POST',
+            body: {}})
+
+  
         }
 
     }

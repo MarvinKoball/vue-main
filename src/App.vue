@@ -30,9 +30,20 @@ export default {
       setInterval(async () => {
         const response = await fetch(endpoint)
         const json = await response.json()
-        this.pollResponse = json
-      }, 5000)
-  }
+        let formated =this.formatTime(json)
+        this.pollResponse = formated
+        
+      }, 1000)
+  },
+       formatTime(requests) {
+        requests.forEach((request)=>{
+        let date= new Date(request.requestTimestamp)
+        request.requestTimestamp=date.toLocaleString()
+        })
+        return requests
+            
+   
+     }
   },
 
   created(){
